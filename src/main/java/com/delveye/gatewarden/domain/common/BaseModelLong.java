@@ -7,10 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.UUID;
-
 /**
- * Base entity class with UUID primary key.
+ * Base entity class with Long primary key.
  *
  * @author Slobodan Zivanovic (slobodan.zivanovic@delveye.com)
  * @since 1.0.0
@@ -21,9 +19,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @SuperBuilder
 @EqualsAndHashCode(of = "id", callSuper = false)
-public abstract class BaseModel extends BaseAudit {
+public abstract class BaseModelLong extends BaseAudit {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 }
